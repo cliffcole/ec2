@@ -17,7 +17,8 @@ resource "aws_instance" "web_instance" {
   ami               = var.ami_id == "" ? local.default_ami : var.ami_id
   instance_type     = var.instance_type
   availability_zone = var.availability_zone
-
+  subnet_id = var.subnet_id
+  security_groups = var.security_groups
   tags = {
     "Name" = "${var.name}-${count.index + 1}"
     "environment"  = var.environment
