@@ -9,7 +9,7 @@ variable "availability_zone" {}
 variable "name" {
   type = string
 }
-variable "env" {
+variable "environment" {
   type = string
 }
 variable "instance_count" {

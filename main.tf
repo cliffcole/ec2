@@ -20,6 +20,6 @@ resource "aws_instance" "web_instance" {
 
   tags = {
     "Name" = "${var.name}-${count.index + 1}"
-    "environment"  = var.env
+    "environment"  = var.environment
   }
 }
