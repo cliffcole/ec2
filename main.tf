@@ -35,6 +35,10 @@ connection {
       "sudo bash /tmp/install/install.sh"
      ]
   }
+
+  lifecycle {
+    ignore_changes = [security_groups]
+  }
   tags = {
     "Name" = "${var.name}-${count.index + 1}"
     "environment"  = var.environment
