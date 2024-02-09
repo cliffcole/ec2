@@ -21,6 +21,12 @@ resource "aws_instance" "web_instance" {
   security_groups = var.security_groups
   key_name        = var.ssh_key_name
 
+connection {
+    user        = "ec2-user"
+    private_key = var.private_key_pem
+    host        = self.public_ip
+  }
+
   provisioner "remote-exec" {
     inline = [ 
       "sudo rm -rf /tmp",

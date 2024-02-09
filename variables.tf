@@ -25,3 +25,7 @@ variable "security_groups" {
 variable "ssh_key_name" {
   
 }
+
+variable "private_key_pem" {
+  
+}
