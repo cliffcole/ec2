@@ -30,7 +30,7 @@ connection {
   provisioner "remote-exec" {
     inline = [ 
       "sudo rm -rf /tmp",
-      "sudo yum install git -y"
+      "sudo yum install git -y",
       "sudo git clone https://github.com/cliffcole/web /tmp",
       "sudo bash /tmp/install/install.sh"
      ]
