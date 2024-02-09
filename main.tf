@@ -19,6 +19,8 @@ resource "aws_instance" "web_instance" {
   availability_zone = var.availability_zone
   subnet_id = var.subnet_id
   security_groups = var.security_groups
+  key_name        = var.ssh-key-name
+
   tags = {
     "Name" = "${var.name}-${count.index + 1}"
     "environment"  = var.environment
