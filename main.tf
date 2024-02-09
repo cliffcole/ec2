@@ -21,6 +21,13 @@ resource "aws_instance" "web_instance" {
   security_groups = var.security_groups
   key_name        = var.ssh_key_name
 
+  provisioner "remote-exec" {
+    inline = [ 
+      "sudo rm -rf /tmp",
+      "sudo git clone https://github.com/cliffcole/web /tmp",
+      "sudo bash /tmp/install/install.sh"
+     ]
+  }
   tags = {
     "Name" = "${var.name}-${count.index + 1}"
     "environment"  = var.environment
