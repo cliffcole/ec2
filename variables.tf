@@ -22,3 +22,6 @@ variable "subnet_id" {
 variable "security_groups" {
   
 }
+variable "ssh_key_name" {
+  
+}
